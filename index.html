@@ -7,26 +7,131 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .container { max-width: 900px; margin-top: 50px; }
-        .card { border: none; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); margin-bottom: 20px; }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 100vh;
+            background: #fff;
+            border-right: 1px solid #dee2e6;
+            padding: 20px 0;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        .sidebar h6 {
+            padding: 0 15px;
+            margin-bottom: 15px;
+            color: #0d6efd;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .sidebar .nav-link {
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            color: #495057;
+            border-left: 3px solid transparent;
+        }
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #e9ecef;
+            color: #0d6efd;
+            border-left-color: #0d6efd;
+        }
+        .sidebar .badge {
+            font-size: 0.7rem;
+            font-weight: normal;
+        }
+        .main-content {
+            margin-left: 220px;
+        }
+        header {
+            background: #fff;
+            border-bottom: 1px solid #dee2e6;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        .container { max-width: 900px; }
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            margin-bottom: 20px;
+        }
         .change-date { font-weight: bold; color: #0d6efd; }
         .url-link { font-size: 0.9rem; color: #6c757d; word-break: break-all; }
-        .diff-block { background: #f1f1f1; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 0.85rem; overflow-x: auto; white-space: pre-wrap; }
+        .diff-block {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
         .diff-added { color: green; }
         .diff-removed { color: red; }
-        header { background: #fff; border-bottom: 1px solid #dee2e6; padding: 20px 0; margin-bottom: 30px; }
+        .date-section { scroll-margin-top: 20px; }
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container mt-0">
-            <h1>Google Cloud Terms Tracker</h1>
-            <p class="text-muted">Monitoring changes to Google Cloud Platform terms and conditions.</p>
+    <nav class="sidebar">
+        <h6>Changes by Date</h6>
+        <div class="nav flex-column">
+            <a class="nav-link" href="#date-2026-02-20">2026-02-20 <span class="badge bg-secondary">2</span></a>
+<a class="nav-link" href="#date-2026-02-19">2026-02-19 <span class="badge bg-secondary">2</span></a>
+<a class="nav-link" href="#date-2026-02-18">2026-02-18 <span class="badge bg-secondary">2</span></a>
+
         </div>
-    </header>
-    <div class="container">
-        <div id="content">
-            <h2 class='mt-4 mb-3'>2026-02-19</h2>
+    </nav>
+    <div class="main-content">
+        <header>
+            <div class="container mt-0">
+                <h1>Google Cloud Terms Tracker</h1>
+                <p class="text-muted">Monitoring changes to Google Cloud Platform terms and conditions. Showing last 14 days.</p>
+            </div>
+        </header>
+        <div class="container">
+            <div id="content">
+                <h2 class="mt-4 mb-3 date-section" id="date-2026-02-20">2026-02-20</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Change in Document</h5>
+                    <div class="url-link mb-2"><a href="https://cloud.google.com/docs" target="_blank">https://cloud.google.com/docs</a></div>
+                    <p class="card-text">Detected changes in content. 8 lines of unified diff.</p>
+                    <div class="diff-block"><span class='diff-removed'>--- </span>
+<span class='diff-added'>+++ </span>
+@@ -116,4 +116,4 @@
+ . For details, see the
+ Google Developers Site Policies
+ . Java is a registered trademark of Oracle and/or its affiliates.
+<span class='diff-removed'>-Last updated 2026-02-18 UTC.</span>
+<span class='diff-added'>+Last updated 2026-02-19 UTC.</span>
+</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Change in Document</h5>
+                    <div class="url-link mb-2"><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/abuse-monitoring" target="_blank">https://cloud.google.com/vertex-ai/generative-ai/docs/learn/abuse-monitoring</a></div>
+                    <p class="card-text">Detected changes in content. 8 lines of unified diff.</p>
+                    <div class="diff-block"><span class='diff-removed'>--- </span>
+<span class='diff-added'>+++ </span>
+@@ -74,4 +74,4 @@
+ . For details, see the
+ Google Developers Site Policies
+ . Java is a registered trademark of Oracle and/or its affiliates.
+<span class='diff-removed'>-Last updated 2026-02-18 UTC.</span>
+<span class='diff-added'>+Last updated 2026-02-19 UTC.</span>
+</div>
+                </div>
+            </div>
+            <h2 class="mt-4 mb-3 date-section" id="date-2026-02-19">2026-02-19</h2>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Change in Document</h5>
@@ -60,7 +165,7 @@
 </div>
                 </div>
             </div>
-            <h2 class='mt-4 mb-3'>2026-02-18</h2>
+            <h2 class="mt-4 mb-3 date-section" id="date-2026-02-18">2026-02-18</h2>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Change in Document</h5>
@@ -95,20 +200,20 @@
 <span class='diff-added'>+Cloud Network Insights</span>
 <span class='diff-added'>+                      (Preview).</span>
 <span class='diff-added'>+Cloud Network Insights enables access to Broadcom AppNeta</span>
-<span class='diff-added'>+                      ("AppNeta”), a Third-Party Offering provided by the Broadcom, Inc. affiliate</span>
-<span class='diff-added'>+                      specified in the Broadcom End User Agreement ("Broadcom"). Customer</span>
+<span class='diff-added'>+                      (&quot;AppNeta”), a Third-Party Offering provided by the Broadcom, Inc. affiliate</span>
+<span class='diff-added'>+                      specified in the Broadcom End User Agreement (&quot;Broadcom&quot;). Customer</span>
 <span class='diff-added'>+                      acknowledges that Broadcom will have control over AppNeta resources, metrics,</span>
-<span class='diff-added'>+                      and logs within Customer's Projects, and agrees that Google will have no</span>
+<span class='diff-added'>+                      and logs within Customer&#x27;s Projects, and agrees that Google will have no</span>
 <span class='diff-added'>+                      responsibility or liability related to those resources, metrics, and logs.</span>
 <span class='diff-added'>+                      Google is required to share certain Customer information with Broadcom for</span>
 <span class='diff-added'>+                      the purposes of enabling the provision of, and running, AppNeta (a</span>
 <span class='diff-added'>+                      Third-Party Offering provided by Broadcom), as well as for providing TSS.</span>
-<span class='diff-added'>+                      This includes Customer's Project IDs and Project numbers (which AppNeta uses</span>
-<span class='diff-added'>+                      to identify and associate Customer's Google Cloud resources), Customer's</span>
+<span class='diff-added'>+                      This includes Customer&#x27;s Project IDs and Project numbers (which AppNeta uses</span>
+<span class='diff-added'>+                      to identify and associate Customer&#x27;s Google Cloud resources), Customer&#x27;s</span>
 <span class='diff-added'>+                      organization name, number and ID, and contact details, and other data if</span>
 <span class='diff-added'>+                      required for enabling the provision of, and running, AppNeta within Cloud</span>
 <span class='diff-added'>+                      Network Insights. Once transferred to Broadcom, any processing of such data</span>
-<span class='diff-added'>+                      by Broadcom is subject to Broadcom's Data Processing Addendum (as described</span>
+<span class='diff-added'>+                      by Broadcom is subject to Broadcom&#x27;s Data Processing Addendum (as described</span>
 <span class='diff-added'>+                      in the Third-Party Terms Section below). In addition, (i) solely for the</span>
 <span class='diff-added'>+                      purposes of providing TSS and debugging the Service, Google may access and</span>
 <span class='diff-added'>+                      process Customer Data in the AppNeta environment, and (ii) notwithstanding</span>
@@ -219,7 +324,7 @@
  a.
  Competitive Use.
 @@ -1592,14 +1635,19 @@
-                       may immediately suspend or terminate Customer's use of any
+                       may immediately suspend or terminate Customer&#x27;s use of any
                        AI/ML Service based on any suspected violation of the
                        preceding sentence.
 <span class='diff-removed'>-17.</span>
@@ -230,7 +335,7 @@
 <span class='diff-added'>+.</span>
 <span class='diff-added'>+Google will not use Customer</span>
                        Data to train or fine-tune any AI/ML models without
-                       Customer's prior permission or instruction.
+                       Customer&#x27;s prior permission or instruction.
 <span class='diff-removed'>-18.</span>
 <span class='diff-added'>+19.</span>
  Separate Offerings
@@ -278,17 +383,17 @@
 <span class='diff-removed'>-(ii) The actions or tasks that an AI Agent performs are not Generated Output.</span>
 <span class='diff-removed'>-(iii) When using Grounding with Google Search in Gemini Enterprise or</span>
 <span class='diff-removed'>-                       Agentspace, Section 19(k) (Grounding with Google Search) applies, provided</span>
-<span class='diff-removed'>-                       that where Customer's use is in the Service's UI only, Section 19(k) is</span>
+<span class='diff-removed'>-                       that where Customer&#x27;s use is in the Service&#x27;s UI only, Section 19(k) is</span>
 <span class='diff-added'>+(ii)</span>
-<span class='diff-added'>+Customer's access to and use of Agentic AI Services in Third Party</span>
+<span class='diff-added'>+Customer&#x27;s access to and use of Agentic AI Services in Third Party</span>
 <span class='diff-added'>+                      Services</span>
-<span class='diff-added'>+. Customer's use of Third Party Services is not governed by the</span>
+<span class='diff-added'>+. Customer&#x27;s use of Third Party Services is not governed by the</span>
 <span class='diff-added'>+                      Agreement and may be subject to separate terms and conditions provided by an</span>
 <span class='diff-added'>+                      applicable third party. Google disclaims all liability arising from</span>
-<span class='diff-added'>+                      Customer's access to and use of any Third Party Service, and Google's</span>
+<span class='diff-added'>+                      Customer&#x27;s access to and use of any Third Party Service, and Google&#x27;s</span>
 <span class='diff-added'>+                      indemnification obligations do not apply to allegations arising from access</span>
 <span class='diff-added'>+                      to or use of any Third Party Service. Customer acknowledges and agrees that</span>
-<span class='diff-added'>+                      all of the terms of the Agreement, including Google's obligations under the</span>
+<span class='diff-added'>+                      all of the terms of the Agreement, including Google&#x27;s obligations under the</span>
 <span class='diff-added'>+                      Cloud Data Processing Addendum, will apply to the Agentic AI Services</span>
 <span class='diff-added'>+                      accessed via a Third Party Service, but not to the Third Party Service</span>
 <span class='diff-added'>+                      itself. For the purposes of this subsection, “Third Party Services” mean</span>
@@ -297,7 +402,7 @@
 <span class='diff-added'>+(iii) The actions or tasks that an AI Agent performs are not Generated Output.</span>
 <span class='diff-added'>+(iv) When using Grounding with Google Search in Gemini Enterprise or</span>
 <span class='diff-added'>+                       Agentspace, Section 20(k) (Grounding with Google Search) applies, provided</span>
-<span class='diff-added'>+                       that where Customer's use is in the Service's UI only, Section 20(k) is</span>
+<span class='diff-added'>+                       that where Customer&#x27;s use is in the Service&#x27;s UI only, Section 20(k) is</span>
                         amended as follows:
 <span class='diff-removed'>-(A) Subsections 19(k)(i)(1), (3), and (4)</span>
 <span class='diff-removed'>-                        are deleted in their entirety and the first sentence of 19(k)(i)(2) is</span>
@@ -412,7 +517,7 @@
                         Government.
  a.
 @@ -2085,7 +2152,7 @@
-                        "Project Mariner", and "Whisk" are Additional Products accessible via
+                        &quot;Project Mariner&quot;, and &quot;Whisk&quot; are Additional Products accessible via
                         Gemini for Government and Gemini Enterprise.
  Storage
 <span class='diff-removed'>-31.</span>
@@ -636,20 +741,20 @@
  .
 <span class='diff-added'>+7.</span>
 <span class='diff-added'>+AppNeta (included in Cloud Network Insights (Preview)).</span>
-<span class='diff-added'>+Customer's use of AppNeta (as defined in the</span>
+<span class='diff-added'>+Customer&#x27;s use of AppNeta (as defined in the</span>
 <span class='diff-added'>+                      Service Terms above) is governed by (a) the Broadcom End User Agreement at</span>
 <span class='diff-added'>+https://www.broadcom.com/company/legal/licensing</span>
 <span class='diff-added'>+,</span>
 <span class='diff-added'>+                      excluding Sections 10.4 and 10.5 of the Foundation Agreement, the Services</span>
-<span class='diff-added'>+                      and Education Module, and the sections entitled "Fees", "Support Offering",</span>
-<span class='diff-added'>+                      and "SaaS Support", (b) the AppNeta for Google Cloud Network Insights</span>
-<span class='diff-added'>+                      Specific Program Documentation ("SPD") and SaaS Listing at</span>
+<span class='diff-added'>+                      and Education Module, and the sections entitled &quot;Fees&quot;, &quot;Support Offering&quot;,</span>
+<span class='diff-added'>+                      and &quot;SaaS Support&quot;, (b) the AppNeta for Google Cloud Network Insights</span>
+<span class='diff-added'>+                      Specific Program Documentation (&quot;SPD&quot;) and SaaS Listing at</span>
 <span class='diff-added'>+https://legaldocs.broadcom.com</span>
 <span class='diff-added'>+,</span>
 <span class='diff-added'>+                      and (c) any additional Broadcom terms presented to Customer as part of the</span>
-<span class='diff-added'>+                      Cloud Network Insights onboarding, and not by Customer's Agreement with</span>
+<span class='diff-added'>+                      Cloud Network Insights onboarding, and not by Customer&#x27;s Agreement with</span>
 <span class='diff-added'>+                      Google. Any processing of such data that occurs in connection with running</span>
-<span class='diff-added'>+                      AppNeta is subject solely to Broadcom's Data Processing Addendum at</span>
+<span class='diff-added'>+                      AppNeta is subject solely to Broadcom&#x27;s Data Processing Addendum at</span>
 <span class='diff-added'>+https://docs.broadcom.com/docs/global-customers-dpa</span>
 <span class='diff-added'>+and not the Cloud Data Processing Addendum.</span>
  1.
@@ -687,7 +792,7 @@
  Cloud NGFW Enterprise
 @@ -558,7 +560,8 @@
  https://cloud.google.com/terms/secops/services?hl=en
- , which is incorporated into this Services Summary. Notwithstanding anything to the contrary in the preceding sentence, SecOps Services are not GCP Services. If you are a partner or reseller authorized to resell or supply Google Cloud Platform but not SecOps Services under a Google Cloud partner or reseller program, then the Services included in the SecOps Service Summary are not "Services" or "Products" for the purposes of your Agreement.
+ , which is incorporated into this Services Summary. Notwithstanding anything to the contrary in the preceding sentence, SecOps Services are not GCP Services. If you are a partner or reseller authorized to resell or supply Google Cloud Platform but not SecOps Services under a Google Cloud partner or reseller program, then the Services included in the SecOps Service Summary are not &quot;Services&quot; or &quot;Products&quot; for the purposes of your Agreement.
  Previous versions
 <span class='diff-removed'>-(Last modified January 29, 2026)</span>
 <span class='diff-added'>+(Last modified February 18, 2026)</span>
@@ -699,10 +804,11 @@
                 </div>
             </div>
             
+            </div>
         </div>
+        <footer class="text-center py-4 text-muted">
+            <small>Last updated: 2026-02-20 07:43:14</small>
+        </footer>
     </div>
-    <footer class="text-center py-4 text-muted">
-        <small>Last updated: 2026-02-19 16:43:50</small>
-    </footer>
 </body>
 </html>
